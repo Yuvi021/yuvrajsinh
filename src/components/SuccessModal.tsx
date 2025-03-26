@@ -1,7 +1,7 @@
 // src/components/SuccessModal.tsx
 import { motion } from "framer-motion";
 
-const SuccessModal = ({ onClose }) => {
+const SuccessModal = ({ onClose }:any) => {
   return (
     <motion.div
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
