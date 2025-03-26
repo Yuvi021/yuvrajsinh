@@ -1,31 +1,78 @@
-'use client';
-import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+"use client";
+import { motion } from "framer-motion";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce platform with features like user authentication, product management, shopping cart, and payment integration using Stripe.',
-    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
-    image: '/ecommerce.png',
-    github: 'https://github.com/yuvrajsinh/ecommerce',
-    demo: 'https://ecommerce-demo.vercel.app',
+    title: "ERP Software",
+    description:
+      "A comprehensive ERP platform designed to streamline business processes by managing inventory, sales, and customer data efficiently. It features reusable Material-UI components, optimized data fetching using React Query, and AWS integration for high scalability and security.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Material-UI",
+      "Formik",
+      "React Query",
+      "AWS (S3, EC2, CloudFront, RDS)",
+      "Prisma",
+      "PostgreSQL",
+      "Puppeteer",
+    ],
+    image: "/images/erp.jpg",
+    github: "https://github.com/yuvrajsinh/erp",
+    demo: "https://erp-demo.vercel.app",
   },
   {
-    title: 'Task Management App',
-    description: 'A real-time task management application with features like drag-and-drop, team collaboration, and task prioritization.',
-    technologies: ['React', 'Firebase', 'Material-UI', 'Redux'],
-    image: '/taskmanager.png',
-    github: 'https://github.com/yuvrajsinh/taskmanager',
-    demo: 'https://taskmanager-demo.vercel.app',
+    title: "Healthcare Application",
+    description:
+      "A HIPAA-compliant healthcare platform that facilitates real-time communication between patients and doctors using AWS Chime. It provides appointment booking, secure authentication, and video conferencing, ensuring seamless communication and care delivery.",
+    technologies: [
+      "React",
+      "Redux",
+      "Material-UI",
+      "Socket.io",
+      "AWS Chime",
+      "Apollo GraphQL",
+      "TypeScript",
+    ],
+    image: "/images/healthcare.jpg",
+    github: "https://github.com/yuvrajsinh/healthcare-app",
+    demo: "https://healthcare-demo.vercel.app",
   },
   {
-    title: 'Portfolio Website',
-    description: 'A modern, responsive portfolio website built with Next.js and Tailwind CSS. Features dark mode, animations, and a clean design.',
-    technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
-    image: '/portfolio.png',
-    github: 'https://github.com/yuvrajsinh/portfolio',
-    demo: 'https://yuvraj-portfolio.vercel.app',
+    title: "Travel and Leisure Platform",
+    description:
+      "A dynamic platform designed to assist travelers in booking accommodations, managing rentals, and exploring local attractions. The platform supports multiple languages, social login integration, and uses Firebase for backend services and real-time data sync.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Recoil",
+      "Leaflet",
+      "TailwindCSS",
+      "Firebase",
+      "i18next",
+    ],
+    image: "/images/Leisure-Travel-Market.jpg",
+    github: "https://github.com/yuvrajsinh/travel-platform",
+    demo: "https://travel-demo.vercel.app",
+  },
+  {
+    title: "Sports Betting Platform",
+    description:
+      "A responsive and feature-rich sports betting platform that delivers real-time data updates, live betting options, and secure user management with AWS Cognito. The platform also includes an admin interface for managing events and user activities.",
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "StoryBook",
+      "Redux",
+      "MongoDB",
+      "AWS Cognito",
+    ],
+    image: "/images/images.jfif",
+    github: "https://github.com/yuvrajsinh/sports-betting",
+    demo: "https://sports-demo.vercel.app",
   },
 ];
 
@@ -33,6 +80,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,11 +88,14 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Projects</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Projects
+          </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Project Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -54,12 +105,13 @@ const Projects = () => {
               viewport={{ once: true }}
               className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="relative h-48">
-                <div className="absolute inset-0 bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
-                {/* Add actual project images later */}
-              </div>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                   {project.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -69,30 +121,30 @@ const Projects = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full text-sm"
+                      className="text-sm bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white px-2 py-1 rounded"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-4">
-                  <a
+                <div className="flex justify-between items-center">
+                  {/* <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2"
                   >
-                    <FiGithub className="mr-2" />
-                    Code
-                  </a>
+                    <FiGithub className="text-xl" />
+                    <span>Code</span>
+                  </a> */}
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2"
                   >
-                    <FiExternalLink className="mr-2" />
-                    Demo
+                    {/* <FiExternalLink className="text-xl" /> */}
+                    {/* <span>Live Demo</span> */}
                   </a>
                 </div>
               </div>
@@ -104,4 +156,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;
