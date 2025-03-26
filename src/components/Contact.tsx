@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import SuccessModal from './SuccessModal';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,11 +10,33 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [showModal, setShowModal] = useState(true);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
+    setStatus('loading');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setShowModal(true);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -22,6 +45,10 @@ const Contact = () => {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -62,10 +89,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium text-gray-900 dark:text-white">Email</h4>
                   <a
-                    href="mailto:yuvrajsinh.b@gmail.com"
+                    href="mailto:yuvrajsinhwork@gmail.com"
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                   >
-                    yuvrajsinh.b@gmail.com
+                    yuvrajsinhwork@gmail.com
                   </a>
                 </div>
               </div>
@@ -75,10 +102,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium text-gray-900 dark:text-white">Phone</h4>
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919724853887"
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                   >
-                    +91 98765 43210
+                    +91 9724853887
                   </a>
                 </div>
               </div>
@@ -159,14 +186,27 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+                disabled={status === 'loading'}
+                className={`w-full py-2 px-4 rounded-md transition-colors ${
+                  status === 'loading'
+                    ? 'bg-blue-400 cursor-not-allowed'
+                    : 'bg-blue-600 hover:bg-blue-700'
+                } text-white`}
               >
-                Send Message
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
+
+              {status === 'error' && (
+                <p className="text-red-600 dark:text-red-400 text-center">
+                  Failed to send message. Please try again.
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
       </div>
+
+      {showModal && <SuccessModal onClose={closeModal} />}
     </section>
   );
 };
