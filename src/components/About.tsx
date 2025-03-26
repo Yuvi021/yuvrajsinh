@@ -30,16 +30,18 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              I am a passionate Full Stack Developer with a strong foundation in
-              web development. My journey in software development began with a
-              keen interest in creating innovative solutions and has evolved
-              through hands-on experience with various technologies.
+              I am a passionate Software Engineer with 3 years of expertise in
+              modern web development. I specialize in React.js, Next.js,
+              TypeScript, and Material-UI, creating user-centric designs and
+              seamless user experiences. I excel in collaborating with teams,
+              managing projects, and driving technical solutions to meet
+              organizational objectives.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              I specialize in building responsive, user-friendly applications
-              using modern frameworks and best practices. My approach combines
-              technical excellence with a focus on creating intuitive user
-              experiences.
+              My journey includes hands-on experience with cutting-edge
+              JavaScript frameworks and libraries, and a strong focus on
+              building responsive, user-friendly applications using modern
+              technologies and best practices.
             </p>
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -51,7 +53,9 @@ const About = () => {
                     Bachelor of Technology in Computer Science
                   </span>
                   <br />
-                  <span className="text-sm">2019 - 2023</span>
+                  Parul University, Vadodara, India
+                  <br />
+                  <span className="text-sm">2016 - 2020</span>
                 </p>
               </div>
             </div>
@@ -73,19 +77,22 @@ const About = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-medium text-gray-900 dark:text-white">
-                    Full Stack Developer
+                    Software Engineer - Bitontree Solution
                   </h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
-                    2023 - Present
+                    March 2022 - Present | Ahmedabad, India
                   </p>
                   <p className="text-gray-600 dark:text-gray-300 mt-2">
-                    Working on developing and maintaining web applications using
-                    modern technologies. Focused on creating scalable solutions
-                    and implementing best practices.
+                    Worked on modern web applications using React, Next.js,
+                    TypeScript, and AWS. Collaborated with teams to create
+                    user-centric interfaces and scalable solutions while
+                    adhering to industry best practices.
                   </p>
                 </div>
               </div>
             </div>
+
+            
 
             {/* Certifications Section */}
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
@@ -94,13 +101,7 @@ const About = () => {
               </h3>
               <ul className="space-y-2">
                 <li className="text-gray-600 dark:text-gray-300">
-                  AWS Certified Cloud Practitioner
-                </li>
-                <li className="text-gray-600 dark:text-gray-300">
-                  Microsoft Certified: Azure Fundamentals
-                </li>
-                <li className="text-gray-600 dark:text-gray-300">
-                  Google Associate Cloud Engineer
+                  Web Development Certificate (Udemy)
                 </li>
               </ul>
             </div>
