@@ -11,7 +11,7 @@ const Contact = () => {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +61,9 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Contact Me</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Contact Me
+          </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </motion.div>
 
@@ -78,8 +80,9 @@ const Contact = () => {
                 Get in Touch
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-                Feel free to reach out!
+                I&apos;m always open to discussing new projects, creative
+                ideas, or opportunities to be part of your visions. Feel free to
+                reach out!
               </p>
             </div>
 
@@ -87,7 +90,9 @@ const Contact = () => {
               <div className="flex items-center space-x-4">
                 <FiMail className="text-2xl text-blue-600" />
                 <div>
-                  <h4 className="font-medium text-gray-900 dark:text-white">Email</h4>
+                  <h4 className="font-medium text-gray-900 dark:text-white">
+                    Email
+                  </h4>
                   <a
                     href="mailto:yuvrajsinhwork@gmail.com"
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -100,7 +105,9 @@ const Contact = () => {
               <div className="flex items-center space-x-4">
                 <FiPhone className="text-2xl text-blue-600" />
                 <div>
-                  <h4 className="font-medium text-gray-900 dark:text-white">Phone</h4>
+                  <h4 className="font-medium text-gray-900 dark:text-white">
+                    Phone
+                  </h4>
                   <a
                     href="tel:+919724853887"
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -113,7 +120,9 @@ const Contact = () => {
               <div className="flex items-center space-x-4">
                 <FiMapPin className="text-2xl text-blue-600" />
                 <div>
-                  <h4 className="font-medium text-gray-900 dark:text-white">Location</h4>
+                  <h4 className="font-medium text-gray-900 dark:text-white">
+                    Location
+                  </h4>
                   <p className="text-gray-600 dark:text-gray-300">
                     Ahmedabad, Gujarat, India
                   </p>
@@ -186,17 +195,17 @@ const Contact = () => {
 
               <button
                 type="submit"
-                disabled={status === 'loading'}
+                disabled={status === "loading"}
                 className={`w-full py-2 px-4 rounded-md transition-colors ${
-                  status === 'loading'
-                    ? 'bg-blue-400 cursor-not-allowed'
-                    : 'bg-blue-600 hover:bg-blue-700'
+                  status === "loading"
+                    ? "bg-blue-400 cursor-not-allowed"
+                    : "bg-blue-600 hover:bg-blue-700"
                 } text-white`}
               >
-                {status === 'loading' ? 'Sending...' : 'Send Message'}
+                {status === "loading" ? "Sending..." : "Send Message"}
               </button>
 
-              {status === 'error' && (
+              {status === "error" && (
                 <p className="text-red-600 dark:text-red-400 text-center">
                   Failed to send message. Please try again.
                 </p>

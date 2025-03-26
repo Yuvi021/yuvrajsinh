@@ -9,7 +9,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Hi, I'm a Software Engineer 👋
+        Hi, I&apos;m a Software Engineer 👋
       </motion.h1>
       <motion.p
         className="text-lg text-gray-500 dark:text-gray-400"
