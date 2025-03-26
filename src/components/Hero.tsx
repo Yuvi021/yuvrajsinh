@@ -44,7 +44,7 @@ const Hero = () => {
             className="flex justify-center space-x-6"
           >
             <a
-              href="https://github.com/yuvrajsinh"
+              href="https://github.com/Yuvi021"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
@@ -60,7 +60,7 @@ const Hero = () => {
               <FiLinkedin size={24} />
             </a>
             <a
-              href="mailto:yuvrajsinh.b@gmail.com"
+              href="mailto:yuvrajsinhwork@gmail.com"
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               <FiMail size={24} />
