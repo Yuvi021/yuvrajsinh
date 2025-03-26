@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const projects = [
   {
