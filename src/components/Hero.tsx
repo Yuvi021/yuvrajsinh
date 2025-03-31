@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiCode, FiServer, FiDatabase } from 'react-icons/fi';
 import Script from 'next/script';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -54,10 +55,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex justify-center mb-6"
+              className="flex justify-center mb-8"
             >
-              <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-2">
-                <FiCode className="text-blue-600 dark:text-blue-400 text-2xl" />
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-xl">
+                <Image
+                  src="/images/profile.jfif"
+                  alt="Yuvrajsinh Borasiya"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 192px, 224px"
+                />
               </div>
             </motion.div>
             <motion.h1
