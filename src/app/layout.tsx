@@ -7,25 +7,34 @@ import ThemeWrapper from '@/components/ThemeWrapper';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Yuvrajsinh Borasiya | Full Stack Developer',
-  description: 'Portfolio website of Yuvrajsinh Borasiya, a Full Stack Developer specializing in modern web applications, React, Node.js, and cloud technologies.',
-  keywords: 'Full Stack Developer, React Developer, Node.js Developer, Web Development, Portfolio',
+  title: 'Yuvrajsinh Borasiya - Expert Full Stack Developer | React & Node.js Specialist',
+  description: 'Yuvrajsinh Borasiya - Expert Full Stack Developer specializing in React, Node.js, and modern web technologies. View portfolio, projects, and contact for web development services.',
+  keywords: 'Yuvrajsinh Borasiya, Full Stack Developer, React Developer, Node.js Developer, Web Development, Portfolio, Software Engineer, Web Applications, Frontend Developer, Backend Developer, MERN Stack, JavaScript Expert, Web Solutions, Custom Web Development',
   authors: [{ name: 'Yuvrajsinh Borasiya' }],
   openGraph: {
-    title: 'Yuvrajsinh Borasiya | Full Stack Developer',
-    description: 'Portfolio website of Yuvrajsinh Borasiya, a Full Stack Developer specializing in modern web applications.',
+    title: 'Yuvrajsinh Borasiya - Expert Full Stack Developer | React & Node.js Specialist',
+    description: 'Yuvrajsinh Borasiya - Expert Full Stack Developer specializing in React, Node.js, and modern web technologies. View portfolio, projects, and contact for web development services.',
     type: 'website',
     locale: 'en_US',
     siteName: 'Yuvrajsinh Borasiya Portfolio',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Yuvrajsinh Borasiya - Full Stack Developer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Yuvrajsinh Borasiya | Full Stack Developer',
-    description: 'Portfolio website of Yuvrajsinh Borasiya, a Full Stack Developer specializing in modern web applications.',
+    title: 'Yuvrajsinh Borasiya - Expert Full Stack Developer | React & Node.js Specialist',
+    description: 'Yuvrajsinh Borasiya - Expert Full Stack Developer specializing in React, Node.js, and modern web technologies.',
     creator: '@yuvrajsinh',
+    images: ['/og-image.jpg'],
   },
   viewport: 'width=device-width, initial-scale=1',
-  robots: 'index, follow',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   themeColor: '#000000',
   manifest: '/manifest.json',
   icons: {
@@ -33,10 +42,22 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   alternates: {
-    canonical: 'https://yuvrajsinhborasiya.com',
+    canonical: 'https://yuvrajsinhborasiya.netlify.app',
   },
   verification: {
     google: 'your-google-site-verification',
+  },
+  metadataBase: new URL('https://yuvrajsinhborasiya.netlify.app'),
+  category: 'technology',
+  classification: 'business',
+  referrer: 'origin-when-cross-origin',
+  colorScheme: 'dark light',
+  creator: 'Yuvrajsinh Borasiya',
+  publisher: 'Yuvrajsinh Borasiya',
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
   },
 };
 

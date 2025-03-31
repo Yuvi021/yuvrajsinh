@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://yuvrajsinhborasiya.com/sitemap.xml
+Sitemap: https://yuvrajsinhborasiya.netlify.app/sitemap.xml
 
 # Disallow admin and private routes
 Disallow: /api/

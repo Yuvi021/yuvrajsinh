@@ -39,7 +39,7 @@ yarn install
 
 3. Create a `.env` file in the root directory and add your environment variables:
 ```env
-NEXT_PUBLIC_SITE_URL=https://yuvrajsinhborasiya.com
+NEXT_PUBLIC_SITE_URL=https://yuvrajsinhborasiya.netlify.app
 NEXT_PUBLIC_SITE_NAME="Yuvrajsinh Borasiya Portfolio"
 NEXT_PUBLIC_SITE_DESCRIPTION="Portfolio website of Yuvrajsinh Borasiya, a Full Stack Developer"
 NEXT_PUBLIC_TWITTER_HANDLE=@yuvrajsinh
