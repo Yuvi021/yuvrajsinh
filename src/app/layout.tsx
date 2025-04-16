@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     canonical: 'https://yuvrajsinhborasiya.netlify.app',
   },
   verification: {
-    google: 'your-google-site-verification',
+    google: 's1USayEIEzl0ihSNq9Z6Dsh8q9xQdXwl5QOYYWUG9c8',
   },
   metadataBase: new URL('https://yuvrajsinhborasiya.netlify.app'),
   category: 'technology',
@@ -69,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="s1USayEIEzl0ihSNq9Z6Dsh8q9xQdXwl5QOYYWUG9c8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
